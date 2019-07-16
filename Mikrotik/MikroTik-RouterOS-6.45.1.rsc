@@ -30,8 +30,7 @@ enc-algorithm=aes-256 dh-group=modp1024 lifetime=8h dpd-interval=2m
 # Add a new IPSec Policy
 /ip ipsec policy add src-address=192.168.88.0/24 src-port=any \
 dst-address=10.74.0.0/16 dst-port=any protocol=all action=encrypt \
-level=require ipsec-protocol=esp tunnel=yes sa-src-address=116.15.31.167 \
-sa-dst-address=13.211.10.144 proposal=azure-ipsec-proposal peer=azure-ipsec-peer
+level=require ipsec-protocol=esp tunnel=yes proposal=azure-ipsec-proposal peer=azure-ipsec-peer
 
 # Set TCPMSS to 1360 (may vary depending Mikrotek model and LAN configuration)
 /ip firewall mangle add place-before=0 action=change-mss new-mss=1360 \
